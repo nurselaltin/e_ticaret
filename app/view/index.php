@@ -1,97 +1,11 @@
 
-<!DOCTYPE html>
-<!--[if IE 9]> <html lang="zxx" class="ie9"> <![endif]-->
-<!--[if gt IE 9]> <html lang="zxx" class="ie"> <![endif]-->
-<!--[if !IE]><!-->
-<html dir="ltr" lang="zxx">
-
 
 <?php require view('static/head');?>
 
-<!-- body classes:  -->
-<!-- "boxed": boxed layout mode e.g. <body class="boxed"> -->
-<!-- "pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> -->
-<!-- "transparent-header": makes the header transparent and pulls the banner to top -->
-<!-- "gradient-background-header": applies gradient background to header -->
-<!-- "page-loader-1 ... page-loader-6": add a page loader to the page (more info @components-page-loaders.html) -->
-<body class=" ">
 
-<!-- scrollToTop -->
-<!-- ================ -->
-<div class="scrollToTop circle"><i class="icon-up-open-big"></i></div>
-
-<!-- page wrapper start -->
-<!-- ================ -->
-<div class="page-wrapper">
     <!-- header-container start -->
     <?php require  view('static/header');?>
     <!-- header-container end -->
-    <!-- banner start -->
-    <!-- ================ -->
-    <div class="banner dark-translucent-bg padding-bottom-clear" style="background-image:url('images/shop-banner.jpg');background-position: 50% 32%;">
-        <!-- breadcrumb start -->
-        <!-- ================ -->
-        <div class="breadcrumb-container">
-            <div class="container">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><i class="fa fa-home pr-2"></i><a class="link-dark" href="<?= public_url();?>index.html">Home</a></li>
-                    <li class="breadcrumb-item active">Shop 4 Columns</li>
-                </ol>
-            </div>
-        </div>
-
-        <!-- section start -->
-        <!-- ================ -->
-        <div class="dark-translucent-bg section">
-            <div class="container-fluid">
-                <!-- filters start -->
-                <div class="sorting-filters text-center mb-20 d-flex justify-content-center">
-                    <form class="form-inline">
-                        <div class="form-group">
-                            <label>Sort by</label>
-                            <select class="form-control">
-                                <option selected="selected">Date</option>
-                                <option>Price</option>
-                                <option>Model</option>
-                            </select>
-                        </div>
-                        <div class="form-group ml-1">
-                            <label>Order</label>
-                            <select class="form-control">
-                                <option selected="selected">Acs</option>
-                                <option>Desc</option>
-                            </select>
-                        </div>
-                        <div class="form-group ml-1">
-                            <label>Price $ (min/max)</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="form-group ml-1">
-                            <label class="invisible">Price $ (max)</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="form-group ml-1">
-                            <label>Category</label>
-                            <select class="form-control">
-                                <option selected="selected">Smartphones</option>
-                                <option>Tablets</option>
-                                <option>Smart Watches</option>
-                                <option>Desktops</option>
-                                <option>Software</option>
-                                <option>Accessories</option>
-                            </select>
-                        </div>
-                        <div class="form-group ml-1">
-                            <a href="<?= public_url();?>#" class="btn btn-default">Submit</a>
-                        </div>
-                    </form>
-                </div>
-                <!-- filters end -->
-            </div>
-        </div>
-        <!-- section end -->
-    </div>
-    <!-- banner end -->
 
     <!-- main-container start -->
     <!-- ================ -->
@@ -129,7 +43,7 @@
                                             </div>
                                         </div>
                                         <div class="body">
-                                            <h3><a href="<?= public_url();?>shop-product.html">Suscipit consequatur velit</a></h3>
+                                            <h3><a href="<?= base_url('product');?>">Suscipit consequatur velit</a></h3>
                                             <p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas inventore modi.</p>
                                             <div class="elements-list clearfix">
                                                 <span class="price"><del>$100.00</del> $70.00</span>
@@ -700,6 +614,9 @@
             </div>
         </div>
     </section>
+
+<!-- main-container end -->
+
 </div>
 <!-- page-wrapper end -->
 

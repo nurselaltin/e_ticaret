@@ -15,3 +15,8 @@ function public_url($url = null){
 
     return URL.'public/'.$url;
 }
+
+function base_url($url = 'index'){
+
+    return URL.$url;
+}
