@@ -54,10 +54,10 @@
                         <!-- ================ -->
                         <div class="header-top-dropdown text-right">
                             <div class="btn-group">
-                                <a href="<?= public_url();?>page-signup.html" class="btn btn-default btn-sm"><i class="fa fa-user pr-2"></i> Sign Up</a>
+                                <a href="<?= admin_url('sign_up');?>" class="btn btn-default btn-sm"><i class="fa fa-user pr-2"></i> Sign Up</a>
                             </div>
                             <div class="btn-group">
-                                <button id="header-top-drop-2" type="button" class="btn dropdown-toggle btn-default btn-sm dropdown-toggle--no-caret" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-lock pr-2"></i> Login</button>
+                                <a href="<?=admin_url('login');?>" class="btn btn-default btn-sm"><i class="fa fa-user pr-2"></i> Login</a>
                                 <ul class="dropdown-menu dropdown-menu-right dropdown-animation" aria-labelledby="header-top-drop-2">
                                     <li>
                                         <form class="login-form margin-clear">
