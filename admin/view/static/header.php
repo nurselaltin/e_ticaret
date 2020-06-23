@@ -13,6 +13,14 @@
     <script src="<?php echo admin_public_url('scripts/jquery-1.12.2.min.js');?>"></script>
     <!-- <script src="https://cdn.ckeditor.com/4.5.7/basic/ckeditor.js"></script>-->
     <script src="<?php echo admin_public_url('scripts/admin.js');?>"></script>
+    <!--styles-->
+    <link rel="stylesheet" href="<?= admin_public_url('styles/main.css');?>">
+
+    <!--scripts-->
+    <script src="<?php echo admin_public_url('scripts/jquery-1.12.2.min.js')?>"></script>
+    <script src="https://cdn.ckeditor.com/4.5.7/basic/ckeditor.js"></script>
+    <script src="<?php echo admin_public_url('scripts/admin.js')?>;"></script>
+
 
 </head>
 <body>

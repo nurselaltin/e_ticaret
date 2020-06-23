@@ -6,7 +6,7 @@ define('URL','http://localhost:8080/e_ticaret/');
  return $meta = [
 
      'host'     => 'localhost',
-     'dbname'   => 'php_iys_db',
+     'dbname'   => 'e_ticaret',
      'username' => 'root',
      'pass'     => null
  ];

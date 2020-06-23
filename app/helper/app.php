@@ -20,3 +20,11 @@ function base_url($url = 'index'){
 
     return URL.$url;
 }
+
+function route($index){
+
+
+    global $route;
+
+    return isset($route[$index]) ? $route[$index] : false;
+}
