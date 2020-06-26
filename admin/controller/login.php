@@ -14,7 +14,7 @@ if(post('submit'))
 
      if($result['user_rank'] == 1){
 
-         header('Location:'.admin_url('admin'));
+         header('Location:'.admin_url());
          exit;
 
      }elseif($result['user_rank'] == 2){

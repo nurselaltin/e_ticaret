@@ -36,8 +36,9 @@ $meta = [
         'title'  => 'Products',
         'icon' => 'archive',
         'submenu' => [
+            'products'    => 'Products',
             'add-product' => 'Add Product',
-            'products'    => 'Products'
+            'add-categories' => 'Add Categories',
         ]
     ],
 

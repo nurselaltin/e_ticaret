@@ -1,3 +1,2 @@
 <?php
-
-echo 'Admin:indexteyiz';
+require  admin_view('index');
