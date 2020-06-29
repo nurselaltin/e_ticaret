@@ -12,33 +12,6 @@
 
     <div class="clear" style="height: 10px;"></div>
 
-    <div class="table">
-        <table>
-            <thead>
-            <tr>
-                <th>Renk Adı</th>
-                <th>İşlemler</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-             <?php foreach ($categories as $category){?>
-
-                 <td>
-                     <a href="#" class="title">
-                           <?= $category;?>
-                     </a>
-                 </td>
-             <?php }?>
-                <td class="hide">
-                    <a href="http://localhost:8080/e_ticaret/admin/edit-user?id=" class="btn">Düzenle</a>
-                    <a onclick="return confirm('Silme işlemini yapıyorsunuz')" href="" class="btn">Sil</a>
-                </td>
-            </tr>
-
-            </tbody>
-        </table>
-    </div>
 
 
     <!-- EKLENEN BEDENLER-->
@@ -90,12 +63,12 @@
                 <li>
                     <label for="title">Renk </label>
                     <div class="form-content">
-                        <input type="text" id="title" name="categories[color]" value="">
+                        <input type="text" id="title" name="color" value="">
                 </li>
                 <li>
                     <label for="title">Beden </label>
                     <div class="form-content">
-                        <input type="text" id="title" name="categories[size]" value="">
+                        <input type="text" id="title" name="size" value="">
                 </li>
             </ul>
             <div class="clear" style="height: 10px;"></div>
