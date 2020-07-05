@@ -22,3 +22,24 @@ function post($name){
 
 }
 
+function get($name){
+
+
+    if(isset($_GET[$name])){
+
+
+
+        if(is_array($_GET[$name])) {
+            //item post değerlerimiz
+            return array_map(function ($item) {
+                return htmlspecialchars(trim($item));
+            }, $_GET[$name]);
+
+        }
+        return htmlspecialchars(trim($_POST[$name]));
+
+
+    }
+
+}
+

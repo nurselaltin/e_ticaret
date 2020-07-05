@@ -7,6 +7,9 @@
             ÜRÜNÜN BİLGİLERİNİ GİRİNİZ
         </h1>
     </div>
+    <div >
+        <a class="btn btn-primary" href="<?= admin_url('products')?>" role="button">Ürünleri Göster</a>
+    </div>
 
     <div class="clear" style="height: 10px;"></div>
 
@@ -16,19 +19,19 @@
                 <li>
                     <label for="title">Ürün Adı </label>
                     <div class="form-content">
-                        <input type="text" id="title" name="product[title]" value="">
+                        <input type="text" id="title" name="title" value="" required>
                 </li>
                 <li>
                     <label for="title">Ürün Açılama</label>
                     <div class="form-content">
-                        <input type="text" id="title" name="product[description]" value="">
+                        <input type="text" id="title" name="description" value="" required>
                     </div>
                 </li>
 
                 <li>
                     <label for="title">Ürün Resmi</label>
                     <div class="form-content">
-                        <input type="file" id="title" name="product[img]" value="">
+                        <input type="file" id="title" name="img" value="" required>
                     </div>
                 </li>
 
@@ -40,16 +43,16 @@
                 <li>
                     <label for="title">Ürün Adedi</label>
                     <div class="form-content">
-                        <input type="text" id="title" name="settings[keywords]" value="">
+                        <input type="text" id="title" name="count" value="" required>
                     </div>
                 </li>
                 <li>
                     <label for="title">Renk</label>
                     <div class="form-content">
-                        <select name="settings[theme]" id="">
+                        <select name="color" id="">
                             <option value="">-Renk seç</option>
                             <?php foreach ($colors as $color):?>
-                                <option value="<?php echo $color;?>"><?php echo  $color;?></option>
+                                <option value="<?= $color['color_name'];?>"><?=  $color['color_name'];?></option>
                             <?php endforeach;?>
                         </select>
 
@@ -58,11 +61,11 @@
                 <li>
                     <label for="title">Beden</label>
                     <div class="form-content">
-                        <select name="settings[theme]" id="">
+                        <select name="size" id="">
                             <option value="">-Beden seç</option>
-                            <?php foreach ($sizes as $size):?>
-                                <option  value="<?php echo $size;?>"><?php echo  $size;?></option>
-                            <?php endforeach;?>
+                              <?php foreach ($sizes as $size){?>
+                                  <option  value="<?= $size['size_name'] ?>"><?= $size['size_name'] ?></option>
+                              <?php }?>
                         </select>
 
                     </div>

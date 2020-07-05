@@ -12,14 +12,16 @@ function admin_view($viewName){
 
 }
 
-function admin_url($url = null){
+function admin_url($url = false){
 
     return URL.'admin/'.$url;
 }
 
-function admin_public_url($url = null){
+
+function admin_public_url($url = false){
 
     return URL.'admin/public/'.$url;
 
 }
+
 
