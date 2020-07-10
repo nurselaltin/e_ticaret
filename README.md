@@ -1,2 +1,2 @@
-# e_ticaret
-Basit e-ticaret sitesi
+# e_ticaret 
+Herhangi bir yapı,kütüphane kullanmadan oluşturulmuş basit e-ticaret sitesi.
