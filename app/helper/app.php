@@ -3,6 +3,7 @@
 
 function controller($controllerName){
 
+
     return PATH.'/app/controller/'.strtolower($controllerName).'.php';
 }
 
@@ -16,7 +17,7 @@ function public_url($url = null){
     return URL.'public/'.$url;
 }
 
-function base_url($url = 'index'){
+function base_url($url = false){
 
     return URL.$url;
 }

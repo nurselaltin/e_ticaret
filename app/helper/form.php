@@ -36,7 +36,7 @@ function get($name){
             }, $_GET[$name]);
 
         }
-        return htmlspecialchars(trim($_POST[$name]));
+        return htmlspecialchars(trim($_GET[$name]));
 
 
     }

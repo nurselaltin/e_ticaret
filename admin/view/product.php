@@ -70,6 +70,7 @@
                        </a>
                    </td>
 
+
                 <td class="hide">
                     <a href="http://localhost:8080/e_ticaret/admin/edit-user?id=" class="btn">Düzenle</a>
                     <a onclick="return confirm('Silme işlemini yapıyorsunuz')" href="<?= admin_url('delete-product?id='.$product['id'])?>" class="btn">Sil</a>
@@ -80,5 +81,5 @@
         </tbody>
     </table>
 </div>
-
 <?php require  admin_view('static/footer')?>
+

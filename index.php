@@ -3,7 +3,10 @@
 require  __DIR__.'/app/init.php';
 
 
-$route = array_filter(explode('/', $_SERVER['REQUEST_URI']));
+$routeExplode = explode('?',$_SERVER['REQUEST_URI']);
+
+//array_filter():[0].indeksin boş değer aldığı için kaldırıyoruz.
+$route = array_filter(explode('/',$routeExplode[0]));
 //IYS_MVC klasör adını diziden kaldıralım
 if(SUBFOLDER == TRUE){
     array_shift($route);
@@ -18,8 +21,8 @@ if(!isset($route[0])){
 
 //Yazılan değer yanlış ise 404 sayfasına yönlendir
 
-if(!file_exists(controller($route[0]))){
 
+if(!file_exists(controller(route(0)))){
     $route[0] = '404';
 }
 

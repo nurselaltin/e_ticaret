@@ -9,6 +9,7 @@
 <!-- ================ -->
 <section class="main-container">
 
+
     <div class="container">
         <div class="row">
 
@@ -55,8 +56,8 @@
                         <!-- pills end -->
                     </div>
                     <div class="col-lg-8 pv-30">
-                        <h2 class="mt-4">Description</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem debitis enim facilis porro quia in voluptates praesentium, cupiditate, dolorum. Facilis minus, quidem! Id perspiciatis labore praesentium voluptatibus assumenda odio, magni.</p>
+                        <h2 class="mt-4"><?= $product['product_title']?></h2>
+                         <p><?= $product['product_description']?></p>
                         <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit</h4>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non sint beatae delectus obcaecati eveniet nulla voluptate odio est laborum veniam? Natus nemo provident, voluptate molestias sint, nam dolor blanditiis minus!</p>
                         <hr class="mb-10">

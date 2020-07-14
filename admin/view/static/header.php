@@ -20,15 +20,17 @@
     <!--styles-->
     <link rel="stylesheet" href="<?= admin_public_url('styles/main.css');?>">
 
+
     <!--scripts-->
     <script src="<?php echo admin_public_url('scripts/jquery-1.12.2.min.js')?>"></script>
     <script src="https://cdn.ckeditor.com/4.5.7/basic/ckeditor.js"></script>
     <script src="<?php echo admin_public_url('scripts/admin.js')?>;"></script>
 
-
-
 </head>
 <body>
+<style>
+    .slow .toggle-group { transition: left 0.7s; -webkit-transition: left 0.7s; }
+</style>
 
 <?php if(route(1) != 'login' && route(1) != 'sign_up'){?>
 
@@ -45,9 +47,8 @@
                 </a>
             </li>
             <li>
-                <a href="#">
-                    <span class="fa fa-comment"></span>
-                    1
+                <a target="_blank" href="<?=base_url()?>">
+                    <span class="fa fa-eye"></span>
                 </a>
             </li>
             <li>

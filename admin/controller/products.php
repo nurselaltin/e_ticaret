@@ -5,4 +5,5 @@
      $query->execute();
      $products = $query->fetchAll(PDO::FETCH_ASSOC);
 
+
      require admin_view('product');
