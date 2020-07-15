@@ -1,9 +1,13 @@
 <?php
-if (empty($_GET)) {
-    echo 'bos';
-    exit;
-}else{
-    echo 'dolu';
-    exit;
+if(get('id')){
+
+   $query = $db->prepare('DELETE FROM product WHERE id= :id');
+   $query->execute([
+       'id' => get('id')
+   ]);
+ 
+   header('Location:'.admin_url('products'));   
+
+
 }
 

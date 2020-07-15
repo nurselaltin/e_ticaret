@@ -73,7 +73,7 @@
                         </a>
                     </td>
                     <td class="hide">
-                        <a href="http://localhost:8080/e_ticaret/admin/edit-user?id=" class="btn">Düzenle</a>
+                    
                         <a onclick="return confirm('Silme işlemini yapıyorsunuz')" href="<?= admin_url('delete-customer?id='.$order['user_id'])?>" class="btn">Sil</a>
                     </td>
                 </tr>

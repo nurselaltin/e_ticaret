@@ -2,8 +2,9 @@
 
 require  __DIR__.'/app/init.php';
 
-
+//get ile id gönderebilmek ? ile için urli parçalamamız lazım.Aksi halde controller adını product?id=2 şeklinde arıyor.
 $routeExplode = explode('?',$_SERVER['REQUEST_URI']);
+
 
 //array_filter():[0].indeksin boş değer aldığı için kaldırıyoruz.
 $route = array_filter(explode('/',$routeExplode[0]));

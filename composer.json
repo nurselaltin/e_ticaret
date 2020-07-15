@@ -1,0 +1,12 @@
+{
+    "name": "nursel/e_ticaret",
+    "description": "composer install",
+    "authors": [
+        {
+            "name": "Nursel ALTIN",
+            "email": "nurselaltin.na@gmail.com"
+        }
+    ],
+    "require": {
+    }
+}

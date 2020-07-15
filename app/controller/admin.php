@@ -1,20 +1,16 @@
 <?php
 
 
-$route = array_filter(explode('/',$_SERVER['REQUEST_URI']));
 
+if(!route(1)){
 
-
-
-if(SUBFOLDER == TRUE){
-
-    array_shift($route);
+   $route[1] = 'index';
 }
 
 
 
-if(!isset($route[1])){
 
+if(!file_exists(admin_controller(route(1)))){
     $route[1] = 'index';
 }
 

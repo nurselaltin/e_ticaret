@@ -35,4 +35,4 @@ if(post('submit')){
 }
 
 
-require admin_view('add-product');
+require admin_view('product/add-product');

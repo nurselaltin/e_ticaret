@@ -5,4 +5,4 @@
      $query->execute();
      $customers = $query->fetchAll(PDO::FETCH_ASSOC);
 
-     require admin_view('customer');
+     require admin_view('customer/index');

@@ -59,7 +59,7 @@
                         <h2 class="mt-4"><?= $product['product_title']?></h2>
                          <p><?= $product['product_description']?></p>
                         <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non sint beatae delectus obcaecati eveniet nulla voluptate odio est laborum veniam? Natus nemo provident, voluptate molestias sint, nam dolor blanditiis minus!</p>
+                         <p><?= $product['product_description']?></p>
                         <hr class="mb-10">
                         <div class="clearfix mb-20">
                     <span>
@@ -79,28 +79,27 @@
                         <form class="clearfix row grid-space-10">
                             <div class="form-group col-lg-4">
                                 <label>Quantity</label>
-                                <input type="text" class="form-control" value="1">
+                                <input type="text" class="form-control" value="<?= $product['product_count']?>">
                             </div>
                             <div class="form-group col-lg-4">
                                 <label>Color</label>
                                 <select class="form-control">
-                                    <option>Red</option>
-                                    <option>White</option>
-                                    <option>Black</option>
-                                    <option>Blue</option>
-                                    <option>Orange</option>
+                                    <?php foreach ($colors as $color):?>
+                                        <option   <?= ($product['product_color'] == $color['color_name']) ? 'selected' : null ?>  value="<?= $color['color_name'];?>"><?=  $color['color_name'];?></option>
+                                    <?php endforeach;?>
                                 </select>
                             </div>
                             <div class="form-group col-lg-4">
                                 <label>Size</label>
                                 <select class="form-control">
-                                    <option>5.3"</option>
-                                    <option>5.7"</option>
+                                    <?php foreach ($sizes as $size){?>
+                                       <option <?= ($product['product_size'] == $size['size_name']) ? 'selected' : null ?>   value="<?= $size['size_name'] ?>"><?= $size['size_name'] ?></option>
+                                    <?php }?>
                                 </select>
                             </div>
                         </form>
                         <div class="light-gray-bg p-20 bordered clearfix">
-                            <span class="product price"><i class="icon-tag pr-10"></i>$99.00</span>
+                            <span class="product price"><i class="icon-tag pr-10"></i><?= $product['product_price']?> TL</span>
                             <div class="product elements-list pull-right clearfix">
                                 <input type="submit" value="Add to Cart" class="margin-clear btn btn-default">
                             </div>
