@@ -1,0 +1,281 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jul 20, 2020 at 10:25 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.2
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `e_ticaret`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `color`
+--
+
+CREATE TABLE `color` (
+  `id` int(11) NOT NULL,
+  `color_name` varchar(255) COLLATE utf8_turkish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Dumping data for table `color`
+--
+
+INSERT INTO `color` (`id`, `color_name`) VALUES
+(1, 'Kırmızı'),
+(2, 'Sarı'),
+(5, 'pembe'),
+(8, 'yeşil');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `credit_card`
+--
+
+CREATE TABLE `credit_card` (
+  `id` int(11) NOT NULL,
+  `firstname` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
+  `lastname` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
+  `card_type` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
+  `card_number` int(11) NOT NULL,
+  `expiration_date` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
+  `CVS` int(11) NOT NULL,
+  `email` varchar(255) COLLATE utf8_turkish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Dumping data for table `credit_card`
+--
+
+INSERT INTO `credit_card` (`id`, `firstname`, `lastname`, `card_type`, `card_number`, `expiration_date`, `CVS`, `email`) VALUES
+(1, 'NURSEL', 'ALTIN', 'VİSA', 1234567891, '10-2020', 123, 'nurselaltin@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `customer_id` int(11) NOT NULL,
+  `customer_fullname` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
+  `order_no` int(11) NOT NULL,
+  `payment_type` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
+  `state` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
+  `cargo` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
+  `cargo_no` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `ordered_date` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `customer_id`, `customer_fullname`, `order_no`, `payment_type`, `state`, `cargo`, `cargo_no`, `price`, `ordered_date`) VALUES
+(0, 5, 'Nursel', 654321, 'Nakit', 'Kargoda', 'MNG', 123456, 150, '2020-07-05 16:51:42'),
+(1, 4, 'Ahmet Ak ', 123456, 'Kredi', 'Hazırlanıyor', 'MNG', 654321, 50, '2020-07-05 16:37:05'),
+(2, 4, 'Ahmet Ak ', 123456, 'Kredi', 'Hazırlanıyor', 'MNG', 654321, 50, '2020-07-05 16:37:07'),
+(8, 6, 'Nursel', 654321, 'Nakit', 'Kargoda', 'MNG', 123456, 150, '2020-07-05 16:52:28');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product`
+--
+
+CREATE TABLE `product` (
+  `id` int(11) NOT NULL,
+  `product_title` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
+  `product_description` text COLLATE utf8_turkish_ci NOT NULL,
+  `product_img` longtext COLLATE utf8_turkish_ci NOT NULL,
+  `product_count` int(11) NOT NULL,
+  `product_price` int(11) NOT NULL,
+  `product_color` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
+  `product_size` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
+  `order_no` int(11) NOT NULL,
+  `is_public` int(2) NOT NULL,
+  `createdAt` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updatedAt` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`id`, `product_title`, `product_description`, `product_img`, `product_count`, `product_price`, `product_color`, `product_size`, `order_no`, `is_public`, `createdAt`, `updatedAt`) VALUES
+(5, 'nursel', 'tişört', 'limonlu-cheesecake2.png', 3, 0, 'Kırmızı', '40', 123456789, 1, '2020-07-14 08:45:21', '2020-07-20 07:24:21'),
+(6, 'course1', 'ssdda', 'frambuazlı-cheesecake2.png', 3, 123456789, 'Sarı', '39', 0, 1, '2020-07-14 08:45:21', '2020-07-20 07:24:21');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `shopping_card`
+--
+
+CREATE TABLE `shopping_card` (
+  `id` int(11) NOT NULL,
+  `product_title` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
+  `product_count` int(11) NOT NULL,
+  `product_price` int(11) NOT NULL,
+  `product_order_no` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Dumping data for table `shopping_card`
+--
+
+INSERT INTO `shopping_card` (`id`, `product_title`, `product_count`, `product_price`, `product_order_no`) VALUES
+(5, 'nursel', 4, 50, 123456789),
+(6, 'course1', 3, 100, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `size`
+--
+
+CREATE TABLE `size` (
+  `id` int(11) NOT NULL,
+  `size_name` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
+  `active` tinyint(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Dumping data for table `size`
+--
+
+INSERT INTO `size` (`id`, `size_name`, `active`) VALUES
+(1, '38', 1),
+(2, '39', 1),
+(5, '40', 0),
+(7, '42', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `user_id` int(11) NOT NULL,
+  `user_fullname` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
+  `user_username` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
+  `user_email` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
+  `user_phone` varchar(11) COLLATE utf8_turkish_ci NOT NULL,
+  `user_rank` int(2) NOT NULL,
+  `user_password` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
+  `user_order_content` text COLLATE utf8_turkish_ci NOT NULL,
+  `user_date` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_id`, `user_fullname`, `user_username`, `user_email`, `user_phone`, `user_rank`, `user_password`, `user_order_content`, `user_date`) VALUES
+(1, 'Nursel ALTIN', 'nursel', 'nurselaltin.na@gmail.com', '05307986182', 1, '$2y$10$6KXrwB9oZyo2Ll.KiH3H9uT4XlpIE8JyTrEnFDYAEfqy7EMm/S2du', '', '2020-06-23 05:46:38'),
+(5, 'vv', 'cc', 'nurselaltin@aof.anadolu.edu.tr', 'cc', 2, '$2y$10$eiXpKW/hu8259XKTSDgLHeOubqMgp7Eeeds9Vsc/O.eCRHpHqfS7y', '', '2020-06-26 08:16:00');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `color`
+--
+ALTER TABLE `color`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `credit_card`
+--
+ALTER TABLE `credit_card`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `product`
+--
+ALTER TABLE `product`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `shopping_card`
+--
+ALTER TABLE `shopping_card`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `size`
+--
+ALTER TABLE `size`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`user_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `color`
+--
+ALTER TABLE `color`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `credit_card`
+--
+ALTER TABLE `credit_card`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `size`
+--
+ALTER TABLE `size`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
