@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require  __DIR__.'/app/init.php';
 
 //get ile id gönderebilmek ? ile için urli parçalamamız lazım.Aksi halde controller adını product?id=2 şeklinde arıyor.

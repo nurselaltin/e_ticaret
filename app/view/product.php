@@ -79,7 +79,7 @@
                         <form class="clearfix row grid-space-10">
                             <div class="form-group col-lg-4">
                                 <label>Quantity</label>
-                                <input type="text" class="form-control" value="<?= $product['product_count']?>">
+                                <input type="text" class="form-control" value="">
                             </div>
                             <div class="form-group col-lg-4">
                                 <label>Color</label>

@@ -29,3 +29,8 @@ function route($index){
 
     return isset($route[$index]) ? $route[$index] : false;
 }
+
+
+//shopping ürünlerini çekelim
+
+

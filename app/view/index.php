@@ -38,8 +38,8 @@
                                                <span class="badge">30% OFF</span>
                                                <div class="overlay-to-top links">
                                                     <span class="small">
-                                                      <a href="<?= public_url();?>#" class="btn-sm-link"><i class="fa fa-heart-o pr-10"></i>Add to Wishlist</a>
-                                                      <a href="<?= public_url();?>#" class="btn-sm-link"><i class="icon-link pr-1"></i>View Details</a>
+                                                   <!--   <a href="<?= public_url();?>#" class="btn-sm-link"><i class="fa fa-heart-o pr-10"></i>Add to Wishlist</a>
+                                                      <a href="<?= public_url();?>#" class="btn-sm-link"><i class="icon-link pr-1"></i>View Details</a>-->
                                                     </span>
                                                </div>
                                            </div>
@@ -48,7 +48,7 @@
                                                <p class="small"><?= $product['product_description']?></p>
                                                <div class="elements-list clearfix">
                                                    <span class="price"><del></del> $<?= $product['product_price']?></span>
-                                                   <a href="<?= public_url();?>#" class="pull-right margin-clear btn btn-sm btn-default-transparent btn-animated">Add To Cart<i class="fa fa-shopping-cart"></i></a>
+                                                   <a href="<?= base_url('?id='.$product['id']);?>" class="pull-right margin-clear btn btn-sm btn-default-transparent btn-animated">Add To Cart<i class="fa fa-shopping-cart"></i></a>
                                                </div>
                                            </div>
                                        </div>
